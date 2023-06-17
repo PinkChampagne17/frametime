@@ -37,7 +37,7 @@ function removeObserver(observer: FrametimeObserver) {
   observers.splice(index, 1);
 }
 
-function isEmptyObservers() {
+function isObserversEmpty() {
   return observers.length === 0;
 }
 
@@ -47,7 +47,7 @@ export function subscribeFrametime(observer: FrametimeObserver) {
       "Expected the argument passed to subscribeFrametime to be a function"
     );
   }
-  if (isEmptyObservers()) {
+  if (isObserversEmpty()) {
     startObserve();
   }
   addObserver(observer);
